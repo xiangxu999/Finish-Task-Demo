@@ -41,11 +41,6 @@ class Task01ReadExcelAndInsertDbApplicationTests {
             String sql = "insert into student_group_person values (?,?,?)";
             jdbcTemplate.update(sql, IdUtil.simpleUUID(), gid, uid);
         }
-
-
-
-
-
     }
 
 }
