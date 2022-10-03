@@ -5,6 +5,8 @@ import com.deepoove.poi.XWPFTemplate;
 import com.deepoove.poi.config.Configure;
 import com.deepoove.poi.data.ChartMultiSeriesRenderData;
 import com.deepoove.poi.data.Charts;
+import com.deepoove.poi.data.TextRenderData;
+import com.deepoove.poi.data.style.Style;
 import com.deepoove.poi.plugin.table.LoopRowTableRenderPolicy;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -59,7 +61,11 @@ class Task02BuildWordApplicationTests {
                     put("lineChart", chart);
                     // 表格数据
                     put("courseList", courseList);
+                    // 复选框打勾
+                    put("checkBox1",new TextRenderData("R",new Style("Wingdings 2",10)));
+                    put("checkBox2",new TextRenderData("□",new Style("Wingdings 2",10)));
                 }});
+        // 复选框
         template.writeAndClose(Files.newOutputStream(Paths.get("src/main/resources/templates/out.docx")));
     }
 
